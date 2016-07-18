@@ -4,8 +4,8 @@ const context = require('../context')
 const Thing = require('../Thing')
 
 class HeaterController extends Thing {
-  constructor (iri, type) {
-    super(iri, type || context.HeaterController)
+  constructor (iri, config) {
+    super(iri, {type: [context.Device, (config && config.type) || context.HeaterController]})
   }
 
   get () {

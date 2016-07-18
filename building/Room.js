@@ -4,8 +4,8 @@ const context = require('../context')
 const Thing = require('../Thing')
 
 class Room extends Thing {
-  constructor (iri, type) {
-    super(iri, type || context.Room)
+  constructor (iri, config) {
+    super(iri, {type: (config && config.type) || context.Room})
   }
 }
 

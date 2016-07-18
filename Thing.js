@@ -3,11 +3,27 @@
 const context = require('./context')
 const SimpleRDF = require('simplerdf/lite').SimpleRDF
 
+function flattenTypes (types) {
+  if (!Array.isArray(types)) {
+    types = [types]
+  }
+
+  return types.reduce(function (types, type) {
+    if (Array.isArray(type)) {
+      return types.concat(falttenTypes(type))
+    } else {
+      return types.concat([type])
+    }
+  }, [])
+}
+
 class Thing extends SimpleRDF {
-  constructor (iri, type) {
+  constructor (iri, config) {
     super(context, iri)
 
-    this.type = type
+    if (config && config.type) {
+      this.type = flattenTypes(config.type)
+    }
   }
 
   get () {

@@ -5,7 +5,7 @@ const Thing = require('../Thing')
 
 class Thermometer extends Thing {
   constructor (iri, type) {
-    super(iri, type || context.Thermometer)
+    super(iri, {type: [context.Device, (config && config.type) || context.Thermometer]})
   }
 
   get () {

@@ -1,37 +1,47 @@
 'use strict'
 
+var ns = 'http://ns.bergnet.org/dark-horse#'
+
 var context = {
-  Apartment: 'http://ns.bergnet.org/dark-horse#Apartment',
-  HeaterController: 'http://ns.bergnet.org/dark-horse#HeaterController',
-  Light: 'http://ns.bergnet.org/dark-horse#Light',
-  PowerSocket: 'http://ns.bergnet.org/dark-horse#PowerSocket',
-  Room: 'http://ns.bergnet.org/dark-horse#Room',
-  Thermometer: 'http://ns.bergnet.org/dark-horse#Thermometer',
-  Thing: 'http://ns.bergnet.org/dark-horse#Thing',
-  desiredTemperature: 'http://ns.bergnet.org/dark-horse#desiredTemperature',
+  Apartment: ns + 'Apartment',
+  Device: ns + 'Device',
+  HeaterController: ns + 'HeaterController',
+  Hygrometer: ns + 'Hygrometer',
+  Light: ns + 'Light',
+  PowerSocket: ns + 'PowerSocket',
+  Room: ns + 'Room',
+  Switchable: ns + 'Switchable',
+  Thermometer: ns + 'Thermometer',
+  Thing: ns + 'Thing',
+  desiredTemperature: ns + 'desiredTemperature',
   device: {
-    '@id': 'http://ns.bergnet.org/dark-horse#device',
+    '@id': ns + 'device',
     '@array': true
   },
-  humidity: 'http://ns.bergnet.org/dark-horse#humidity',
+  endpoint: {
+    '@id': ns + 'endpoint',
+    '@type': '@id'
+  },
+  humidity: ns + 'humidity',
   label: 'http://www.w3.org/2000/01/rdf-schema#label',
-  lowBatteryPower: 'http://ns.bergnet.org/dark-horse#lowBatteryPower',
-  on: 'http://ns.bergnet.org/dark-horse#on',
-  off: 'http://ns.bergnet.org/dark-horse#off',
+  lowBatteryPower: ns + 'lowBatteryPower',
+  on: ns + 'on',
+  off: ns + 'off',
   room: {
-    '@id': 'http://ns.bergnet.org/dark-horse#room',
+    '@id': ns + 'room',
     '@array': true
   },
   state: {
-    '@id': 'http://ns.bergnet.org/dark-horse#state',
+    '@id': ns + 'state',
     '@type': '@id'
   },
-  temperature: 'http://ns.bergnet.org/dark-horse#temperature',
+  temperature: ns + 'temperature',
   type: {
     '@id': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#type',
-    '@type': '@id'
+    '@type': '@id',
+    '@array': true
   },
-  valve: 'http://ns.bergnet.org/dark-horse#valve'
+  valve: ns + 'valve'
 }
 
 module.exports = context
