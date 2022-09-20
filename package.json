@@ -1,6 +1,6 @@
 {
   "name": "dark-horse-thing",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Abstract classes for Dark Horse things",
   "main": "index.js",
   "scripts": {
